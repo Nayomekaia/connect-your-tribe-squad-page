@@ -1,9 +1,37 @@
 {% render 'partials/head.liquid' %}
+<h1>Mensen Filteren op Geboortejaar</h1>
 
-<h2>Students</h2>
+<!-- Formulier om geboortejaar te kiezen -->
+<form method="get" action="/">
+  <label for="year">Filter op geboortejaar:</label>
+  <select name="year" id="year">
+    <option value="">Alle jaren</option>
+    {% assign unique_years = persons | map: "birthdate" | date: "%Y" | uniq | sort %}
+    {% for year in unique_years %}
+      <option value="{{ year }}" {% if year == selectedYear %}selected{% endif %}>{{ year }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Filter</button>
+</form>
+
 <ul>
   {% for person in persons %}
-    <li><a href="/detail/{{ person.id }}">{{ person.name }}</a></li>
+    <li>
+      <section class="canvas">
+        <a href="/detail/{{ person.id }}">
+            <img src="{{ person.avatar }}" alt="{{ person.name }}" height="262px" width="250px">
+            <h3>{{ person.name }}</h3>
+            <p>Team: {{person.team}}</p>
+            {% assign birth_year = person.birthdate | date: "%Y" | plus: 0 %}
+            {% assign current_year = "now" | date: "%Y" | plus: 0 %}
+            {% assign age = current_year | minus: birth_year %}
+            <p>age: {{ age }}</p>
+
+            <button class="btn">Meer info</button>
+        </a>
+    </section>
+    </li>
+
   {% endfor %}
 </ul>
 
