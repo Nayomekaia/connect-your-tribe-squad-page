@@ -1,0 +1,51 @@
+body { 
+  background-image: url('./background.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  
+  height: 100vh; 
+  width: 100%; 
+  background-attachment: fixed;
+}
+
+/* Algemene stijl voor de canvas (polaroid stijl) */
+.canvas {
+  background-color: white; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #00000033; 
+  width: 300px; 
+  text-align: center; 
+  padding-bottom: 20px; 
+  padding-top: 30px; 
+  margin: 20px auto; 
+  overflow: hidden;
+}
+
+/* Afbeelding binnen de polaroid */
+.canvas img {
+  width: 90%; /* Zorgt ervoor dat de afbeelding zich aanpast aan de breedte van de polaroid */
+  height: auto; /* Houd de hoogte van de afbeelding in verhouding */
+  border-bottom: 2px solid #ccc; /* Lichte rand onder de afbeelding om het te scheiden van de tekst */
+}
+
+/* Stijl voor de naam en leeftijd onder de afbeelding */
+.canvas h3 {
+  font-size: 18px;
+  font-weight: bold; 
+  margin: 10px 0 5px 0; 
+  color: #333;
+}
+
+/* Stijl voor de leeftijd tekst */
+.canvas p {
+  font-size: 14px; 
+  margin: 0; 
+}
+
+h1 {
+  text-align: center; 
+  color: white; 
+  font-size: 40px; 
+  margin-top: 50px; 
+}
+
