@@ -23,9 +23,9 @@ body {
 
 /* Afbeelding binnen de polaroid */
 .canvas img {
-  width: 90%; /* Zorgt ervoor dat de afbeelding zich aanpast aan de breedte van de polaroid */
-  height: auto; /* Houd de hoogte van de afbeelding in verhouding */
-  border-bottom: 2px solid #ccc; /* Lichte rand onder de afbeelding om het te scheiden van de tekst */
+  width: 90%; /
+  height: auto; 
+  border-bottom: 2px solid #ccc; 
 }
 
 /* Stijl voor de naam en leeftijd onder de afbeelding */
